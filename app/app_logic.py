@@ -5,7 +5,7 @@ from app import schemas
 
 load_dotenv()
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-
+ 
 
 client = OpenAI(api_key=OPENAI_API_KEY)  # load from env var
 
@@ -26,7 +26,8 @@ def get_answer_from_openai(question: str):
         schemas.ResponseSchemaOut: A Pydantic schema containing the
         extracted answer text in the `answer` field.
     """
-
+ 
+ 
     response = client.responses.create(model="gpt-4.1", input=question)
     data = response.output[0].content[0].text
     return schemas.ResponseSchemaOut(answer=data)

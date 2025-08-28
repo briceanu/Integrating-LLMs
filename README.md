@@ -4,6 +4,11 @@ This project is a chat assistant built with FastAPI (backend), React (frontend),
 Users can ask questions via a React client, which are sent to the FastAPI backend.
 The backend forwards the question to OpenAI’s GPT model and returns the generated response.
 
+⚠️ Note:
+This middleware was added just to demonstrate how to create a middleware in FastAPI.
+In real-world deployments, client IP checks are usually handled by a reverse proxy server (e.g., Nginx, Traefik, HAProxy).
+That way, invalid requests never even reach your FastAPI app — saving server resources and bandwidth.
+
 🚀 Features
 
 ✅ FastAPI backend with clean API routes
